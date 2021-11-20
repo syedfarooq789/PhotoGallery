@@ -5,6 +5,7 @@ import {
 } from '../model/JsonPlaceHolderApi';
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
+import ListPagination from '../components/ListPagination';
 
 const Gallery = () => {
     const pageLimit = 10;
@@ -15,7 +16,7 @@ const Gallery = () => {
     });
 
     useEffect(() => {
-        getPhotoList(allValues.currentPage);
+        getPhotoList(1);
     }, []);
 
     async function getPhotoList(pageNumber: number) {
@@ -47,6 +48,7 @@ const Gallery = () => {
                     </ImageListItem>
                 ))}
             </ImageList>
+            <ListPagination onPageChange={getPhotoList} totalCount={allValues.totalCount} currentPage={allValues.currentPage} siblingCount={1} pageSize={pageLimit}></ListPagination>
 
         </div>
 
