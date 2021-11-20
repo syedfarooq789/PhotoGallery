@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { GalleryState } from '../interfaces/GalleryState';
 import {
     getPhotos,
+} from '../model/JsonPlaceHolderApi';
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
 
