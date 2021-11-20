@@ -7,6 +7,7 @@ import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
 
 const Gallery = () => {
+    const pageLimit = 10;
     const [allValues, setAllValues] = useState<GalleryState>({
         photos: [],
         totalCount: 0,
@@ -19,7 +20,7 @@ const Gallery = () => {
 
     async function getPhotoList(pageNumber: number) {
         try {
-            const photosApiResponse = await getPhotos(pageNumber);
+            const photosApiResponse = await getPhotos(pageNumber, pageLimit);
             setAllValues({
                 photos: photosApiResponse!!.data,
                 totalCount: parseInt(photosApiResponse!!.headers['x-total-count']),
