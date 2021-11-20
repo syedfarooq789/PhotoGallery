@@ -1,4 +1,5 @@
-import { useEffect } from "react";
+import { useState, useEffect } from 'react';
+import { GalleryState } from '../interfaces/GalleryState';
 import {
     getPhotos,
 } from "../model/JsonPlaceHolderApi";
