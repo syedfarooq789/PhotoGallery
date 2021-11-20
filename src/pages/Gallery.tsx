@@ -4,6 +4,11 @@ import {
 } from "../model/JsonPlaceHolderApi";
 
 const Gallery = () => {
+    const [allValues, setAllValues] = useState<GalleryState>({
+        photos: [],
+        totalCount: 0,
+        currentPage: 1
+    });
     useEffect(() => {
         getPhotoList();
     }, []);
