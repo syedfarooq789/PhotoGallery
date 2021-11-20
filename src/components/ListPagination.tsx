@@ -46,9 +46,9 @@ const ListPagination = ({
 
     const createPaginationNumberList = () => {
         return paginationRange!!.map((pageNumber, index) => {
-            if (pageNumber === DOTS) {
+            if (pageNumber === DOTS)
                 return <ListItem key={index}> &#8230;</ListItem>
-            }
+
 
             // Render Page Pills
             return (
