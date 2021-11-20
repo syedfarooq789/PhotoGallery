@@ -10,15 +10,22 @@ const Gallery = () => {
         totalCount: 0,
         currentPage: 1
     });
+
     useEffect(() => {
-        getPhotoList();
+        getPhotoList(allValues.currentPage);
     }, []);
 
-    async function getPhotoList() {
+    async function getPhotoList(pageNumber: number) {
         try {
-            const photosList = await getPhotos();
+            const photosApiResponse = await getPhotos(pageNumber);
+            setAllValues({
+                photos: photosApiResponse!!.data,
+                totalCount: parseInt(photosApiResponse!!.headers['x-total-count']),
+                currentPage: pageNumber
+            });
+
         } catch (err) {
-            console.log("cannnot fetch photos in gallery" + err);
+            console.log('cannnot fetch photos in gallery' + err);
         }
     }
 
