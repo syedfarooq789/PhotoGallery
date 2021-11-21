@@ -33,6 +33,9 @@ const Gallery = () => {
         }
     }
 
+    function handleItemListClick(item: PhotoDetails) {
+        navigate('../details', { state: item });
+    }
 
     return (
         <div>
