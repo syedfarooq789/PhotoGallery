@@ -5,6 +5,8 @@ import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import IconButton from '@mui/material/IconButton';
+import Avatar from '@mui/material/Avatar';
+import { deepOrange, purple } from '@mui/material/colors';
 
 const ListPagination = ({
     onPageChange,
@@ -52,7 +54,7 @@ const ListPagination = ({
 
             // Render Page Pills
             return (
-                <ListItem selected={pageNumber === currentPage ? true : false} key={index} onClick={() => onPageChange(pageNumber)}> {pageNumber}</ListItem>
+                <Avatar style={style.avatarMargins} sx={pageNumber === currentPage ? { bgcolor: deepOrange[500] } : { bgcolor: purple[500] }} key={index} onClick={() => onPageChange(pageNumber)}> {pageNumber}</Avatar>
 
             );
         })
@@ -89,5 +91,8 @@ const style = {
     },
     listStyle: {
         display: 'flex', padding: '10px'
+    },
+    avatarMargins: {
+        margin: '10px'
     }
 }
