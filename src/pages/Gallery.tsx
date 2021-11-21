@@ -36,7 +36,6 @@ const Gallery = () => {
             const photosApiResponse = await getPhotos(pageNumber, pageLimit);
             handleUrl(pageNumber);
             setAllValues({
-                ...allValues,
                 photos: photosApiResponse!!.data,
                 totalCount: parseInt(photosApiResponse!!.headers['x-total-count']),
                 currentPage: pageNumber
