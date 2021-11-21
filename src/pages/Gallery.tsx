@@ -24,9 +24,8 @@ const Gallery = () => {
     }, []);
 
     function onStartUp() {
-        if (pageNumber === ':pageNumber') {
+        if (pageNumber === ':pageNumber')
             pageNumber = '1';
-        }
         handleUrl(parseInt(pageNumber!!))
         getPhotoList(parseInt(pageNumber!!));
     }
