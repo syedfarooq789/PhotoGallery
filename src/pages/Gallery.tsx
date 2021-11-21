@@ -54,8 +54,8 @@ const Gallery = () => {
     }
 
     return (
-        <div>
-            <ImageList sx={{ width: 500, height: 450 }} cols={3} rowHeight={164}>
+        <div style={style.imageListContainer}>
+            <ImageList sx={style.imageList} cols={3} rowHeight={164}>
                 {allValues.photos.map((item) => (
                     <ImageListItem key={item.id} onClick={() => handleItemListClick(item)}>
                         <img
@@ -79,3 +79,16 @@ const Gallery = () => {
 }
 
 export default Gallery;
+
+const style = {
+    imageListContainer: {
+        flex: 1,
+        display: 'flex',
+        flexDirection: 'column' as 'column'
+    },
+    imageList: {
+        alignSelf: 'center',
+        width: 500,
+        height: 450
+    }
+}
