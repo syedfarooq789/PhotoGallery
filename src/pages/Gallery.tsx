@@ -6,6 +6,7 @@ import {
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
 import ListPagination from '../components/ListPagination';
+import { PhotoDetails } from '../interfaces/PhotoDetails';
 
 const Gallery = () => {
     const pageLimit = 10;
