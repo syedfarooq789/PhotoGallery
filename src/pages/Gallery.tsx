@@ -7,6 +7,7 @@ import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
 import ListPagination from '../components/ListPagination';
 import { PhotoDetails } from '../interfaces/PhotoDetails';
+import { useNavigate, useParams } from 'react-router-dom';
 
 const Gallery = () => {
     const pageLimit = 10;
