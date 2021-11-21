@@ -48,7 +48,11 @@ const Gallery = () => {
                     </ImageListItem>
                 ))}
             </ImageList>
-            <ListPagination onPageChange={getPhotoList} totalCount={allValues.totalCount} currentPage={allValues.currentPage} siblingCount={1} pageSize={pageLimit}></ListPagination>
+            <ListPagination onPageChange={getPhotoList}
+                totalCount={allValues.totalCount}
+                currentPage={allValues.currentPage}
+                siblingCount={1}
+                pageSize={pageLimit}></ListPagination>
 
         </div>
 
