@@ -38,7 +38,7 @@ const Gallery = () => {
         <div>
             <ImageList sx={{ width: 500, height: 450 }} cols={3} rowHeight={164}>
                 {allValues.photos.map((item) => (
-                    <ImageListItem key={item.id}>
+                    <ImageListItem key={item.id} onClick={() => handleItemListClick(item)}>
                         <img
                             src={`${item.thumbnailUrl}?w=164&h=164&fit=crop&auto=format`}
                             srcSet={`${item.thumbnailUrl}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
