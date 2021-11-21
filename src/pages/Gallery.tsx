@@ -9,6 +9,7 @@ import ListPagination from '../components/ListPagination';
 
 const Gallery = () => {
     const pageLimit = 10;
+    const navigate = useNavigate();
     const [allValues, setAllValues] = useState<GalleryState>({
         photos: [],
         totalCount: 0,
