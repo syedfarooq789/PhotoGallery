@@ -50,7 +50,7 @@ const Gallery = () => {
     }
 
     function handleUrl(pageNumber: number) {
-        navigate('/gallery/' + pageNumber);
+        navigate('/gallery/' + pageNumber, { replace: true });
     }
 
     return (
