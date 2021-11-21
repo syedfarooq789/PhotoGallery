@@ -9,6 +9,7 @@ import ListPagination from '../components/ListPagination';
 
 const Gallery = () => {
     const pageLimit = 10;
+    let { pageNumber } = useParams<string>();
     const navigate = useNavigate();
     const [allValues, setAllValues] = useState<GalleryState>({
         photos: [],
@@ -17,13 +18,23 @@ const Gallery = () => {
     });
 
     useEffect(() => {
-        getPhotoList(1);
+        onStartUp()
     }, []);
+
+    function onStartUp() {
+        if (pageNumber === ':pageNumber') {
+            pageNumber = '1';
+        }
+        handleUrl(parseInt(pageNumber!!))
+        getPhotoList(parseInt(pageNumber!!));
+    }
 
     async function getPhotoList(pageNumber: number) {
         try {
             const photosApiResponse = await getPhotos(pageNumber, pageLimit);
+            handleUrl(pageNumber);
             setAllValues({
+                ...allValues,
                 photos: photosApiResponse!!.data,
                 totalCount: parseInt(photosApiResponse!!.headers['x-total-count']),
                 currentPage: pageNumber
@@ -36,6 +47,10 @@ const Gallery = () => {
 
     function handleItemListClick(item: PhotoDetails) {
         navigate('../details', { state: item });
+    }
+
+    function handleUrl(pageNumber: number) {
+        navigate('/gallery/' + pageNumber);
     }
 
     return (
