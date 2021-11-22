@@ -63,13 +63,13 @@ const ListPagination = ({
 
     return (
         <div style={style.paginationContainer}>
-            <Link style={style.Link} to={'/gallery/' + String(currentPage - 1)} onClick={isPrevIconButtonVisible}>
+            <Link style={{ ...style.Link, ...style.marginLink }} to={'/gallery/' + String(currentPage - 1)} onClick={isPrevIconButtonVisible}>
                 <ChevronLeftIcon />
             </Link>
             <List style={style.listStyle}>
                 {createPaginationNumberList()}
             </List>
-            <Link style={style.Link} to={'/gallery/' + String(currentPage + 1)} onClick={isNextIconButtonVisible}>
+            <Link style={{ ...style.Link, ...style.marginLink }} to={'/gallery/' + String(currentPage + 1)} onClick={isNextIconButtonVisible}>
                 < ChevronRightIcon />
             </Link>
 
@@ -94,5 +94,7 @@ const style = {
     },
     Link: {
         color: 'black'
+    }, marginLink: {
+        marginTop: '28px'
     }
 }
