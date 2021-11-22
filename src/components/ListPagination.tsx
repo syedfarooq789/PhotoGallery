@@ -54,8 +54,9 @@ const ListPagination = ({
 
             // Render Page Pills
             return (
-                <Avatar style={style.avatarMargins} sx={pageNumber === currentPage ? { bgcolor: deepOrange[500] } : { bgcolor: purple[500] }} key={index} onClick={() => onPageChange(pageNumber)}> {pageNumber}</Avatar>
-
+                <Avatar style={style.avatarMargins} sx={isAvatarSelected(pageNumber)} key={index} >
+                    <Link style={style.Link} key={index} to={"/gallery/" + pageNumber}>{pageNumber}</Link>
+                </Avatar >
             );
         })
     }
