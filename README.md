@@ -1,6 +1,6 @@
 # A simple gallery app built using ReactJS 
 
-This application fetches different photos https://jsonplaceholder.typicode.com/ api. This application also has custom pagination which is created using ReactJS (no third party components like materialUI). You can also view detail of each photo by clicking any photo and then can move back to same page where you left using reactJs back button and browser back button.
+This application fetches different photos from https://jsonplaceholder.typicode.com/api. This application also has custom pagination which is created using ReactJS (no third party components like materialUI). You can also view detail of each photo by clicking any photo and then can move back to same page where you left using reactJs  button and browser back button.
 
 ## Available Scripts
 
