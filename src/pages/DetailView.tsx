@@ -26,7 +26,7 @@ const DetailView = () => {
 
     return (
         <div>
-            <Button variant="contained" onClick={goBack}>Go Back</Button>
+            <Button variant="contained" role='backButton' onClick={goBack}>Go Back</Button>
             <div style={style.photoDetailContainer}>
                 <Typography style={style.typography} variant="overline" display="block" gutterBottom>
                     AlbumId : {photoDetails.albumId}
