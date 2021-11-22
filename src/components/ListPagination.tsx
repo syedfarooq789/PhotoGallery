@@ -4,7 +4,6 @@ import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
-import IconButton from '@mui/material/IconButton';
 import Avatar from '@mui/material/Avatar';
 import { blue } from '@mui/material/colors';
 import {
@@ -12,7 +11,6 @@ import {
 } from 'react-router-dom';
 
 const ListPagination = ({
-    onPageChange,
     totalCount,
     siblingCount,
     currentPage,
@@ -32,20 +30,12 @@ const ListPagination = ({
         return null;
     }
 
-    const onNext = () => {
-        onPageChange(currentPage + 1);
+    const isPrevIconButtonVisible = (e: React.MouseEvent<HTMLElement>) => {
+        return currentPage === 1 ? e.preventDefault() : true;
     };
 
-    const onPrevious = () => {
-        onPageChange(currentPage - 1);
-    };
-
-    const isPrevIconButtonVisible = (currentPage: number) => {
-        return currentPage === 1 ? true : false
-    };
-
-    const isNextIconButtonVisible = (currentPage: number) => {
-        return currentPage === lastPage ? true : false
+    const isNextIconButtonVisible = (e: React.MouseEvent<HTMLElement>) => {
+        return currentPage === lastPage ? e.preventDefault() : true;
     };
 
     function isAvatarSelected(pageNumber: number) {
@@ -63,29 +53,27 @@ const ListPagination = ({
             // Render Page Pills
             return (
                 <Avatar style={style.avatarMargins} sx={isAvatarSelected(pageNumber)} key={index} >
-                    <Link style={style.Link} key={index} to={"/gallery/" + pageNumber}>{pageNumber}</Link>
+                    <Link style={style.Link} key={index} to={'/gallery/' + pageNumber}>{pageNumber}</Link>
                 </Avatar >
             );
         })
     }
 
-
     const lastPage = paginationRange!![paginationRange!!.length - 1];
 
     return (
         <div style={style.paginationContainer}>
-
-            <IconButton disabled={isPrevIconButtonVisible(currentPage)}
-                color="secondary" onClick={onPrevious}>
+            <Link style={style.Link} to={'/gallery/' + String(currentPage - 1)} onClick={isPrevIconButtonVisible}>
                 <ChevronLeftIcon />
-            </IconButton>
+            </Link>
             <List style={style.listStyle}>
                 {createPaginationNumberList()}
             </List>
-            <IconButton disabled={isNextIconButtonVisible(currentPage)} color="secondary" onClick={onNext}>
-                <ChevronRightIcon />
-            </IconButton>
-        </div>
+            <Link style={style.Link} to={'/gallery/' + String(currentPage + 1)} onClick={isNextIconButtonVisible}>
+                < ChevronRightIcon />
+            </Link>
+
+        </div >
 
     );
 };
