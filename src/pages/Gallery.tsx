@@ -20,37 +20,24 @@ const Gallery = () => {
     });
 
     useEffect(() => {
-        onStartUp()
-    }, []);
-
-    function onStartUp() {
-        if (pageNumber === ':pageNumber')
-            pageNumber = '1';
-        handleUrl(parseInt(pageNumber!!))
-        getPhotoList(parseInt(pageNumber!!));
-    }
+        pageNumber === '1' ? getPhotoList(1) : getPhotoList(parseInt(pageNumber!!));
+    }, [pageNumber]);
 
     async function getPhotoList(pageNumber: number) {
         try {
             const photosApiResponse = await getPhotos(pageNumber, pageLimit);
-            handleUrl(pageNumber);
             setAllValues({
                 photos: photosApiResponse!!.data,
                 totalCount: parseInt(photosApiResponse!!.headers['x-total-count']),
                 currentPage: pageNumber
             });
-
         } catch (err) {
             console.log('cannnot fetch photos in gallery' + err);
         }
     }
 
     function handleItemListClick(item: PhotoDetails) {
-        navigate('../details', { state: item });
-    }
-
-    function handleUrl(pageNumber: number) {
-        navigate('/gallery/' + pageNumber, { replace: true });
+        navigate('/details', { state: item });
     }
 
     return (

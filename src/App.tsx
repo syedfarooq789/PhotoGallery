@@ -27,7 +27,7 @@ function RoutingComponent() {
           <Route path='/details' element={<DetailView />} />
           <Route
             path='/'
-            element={<Navigate to='/gallery/:pageNumber' />}
+            element={<Navigate to='/gallery/1' />}
           />
         </Routes>
       </div>
