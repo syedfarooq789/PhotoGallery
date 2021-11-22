@@ -1,5 +1,5 @@
 import '@testing-library/jest-dom/extend-expect';
-import { render, RenderResult, screen, waitForElement } from '@testing-library/react';
+import { render, RenderResult } from '@testing-library/react';
 import Enzyme from 'enzyme';
 import Gallery from '../pages/Gallery';
 import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
