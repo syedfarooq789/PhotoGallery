@@ -20,7 +20,7 @@ const Gallery = () => {
     });
 
     useEffect(() => {
-        pageNumber === '1' ? getPhotoList(1) : getPhotoList(parseInt(pageNumber!!));
+        getPhotoList(parseInt(pageNumber!!));
     }, [pageNumber]);
 
     async function getPhotoList(pageNumber: number) {
