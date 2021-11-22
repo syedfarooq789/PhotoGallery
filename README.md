@@ -1,6 +1,6 @@
-# A simple gallery app built using ReactJS that shows different picture. It also include pagination that gives you option to move to different pages
+# A simple gallery app built using ReactJS 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This application fetches different photos https://jsonplaceholder.typicode.com/ api. This application also has custom pagination which is created using ReactJS (no third party components like materialUI). You can also view detail of each photo by clicking any photo and then can move back to same page where you left using reactJs back button and browser back button.
 
 ## Available Scripts
 
