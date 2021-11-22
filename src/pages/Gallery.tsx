@@ -75,7 +75,7 @@ const style = {
     },
     imageList: {
         alignSelf: 'center',
-        width: 500,
-        height: 450
+        minWidth: 500,
+        minHeight: 550
     }
 }
