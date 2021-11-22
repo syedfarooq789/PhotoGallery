@@ -1,4 +1,4 @@
-# A simple gallery bulit using ReactJS that picture. It also include pagination that gives you option to move to different pages
+# A simple gallery app built using ReactJS that shows different picture. It also include pagination that gives you option to move to different pages
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
