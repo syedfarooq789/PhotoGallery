@@ -6,7 +6,10 @@ import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import IconButton from '@mui/material/IconButton';
 import Avatar from '@mui/material/Avatar';
-import { deepOrange, purple } from '@mui/material/colors';
+import { blue } from '@mui/material/colors';
+import {
+    Link
+} from 'react-router-dom';
 
 const ListPagination = ({
     onPageChange,
@@ -45,6 +48,11 @@ const ListPagination = ({
         return currentPage === lastPage ? true : false
     };
 
+    function isAvatarSelected(pageNumber: number) {
+        return pageNumber === currentPage ? { bgcolor: blue[300] } : {
+            bgcolor: 'transparent',
+        }
+    }
 
     const createPaginationNumberList = () => {
         return paginationRange!!.map((pageNumber, index) => {
@@ -95,5 +103,8 @@ const style = {
     },
     avatarMargins: {
         margin: '10px'
+    },
+    Link: {
+        color: 'black'
     }
 }
