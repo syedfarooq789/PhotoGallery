@@ -6,6 +6,6 @@ export const getPhotos = async (pageNumber: number, pageLimit: number) => {
         const photoList = await axios.get(JSON_PLACEHOLDER_API_ENDPOINT + `photos?_page=${pageNumber}&_limit=${pageLimit}`);
         return photoList;
     } catch (err) {
-        console.log("get photos error:", err);
+        console.log('get photos error:', err);
     }
 }
