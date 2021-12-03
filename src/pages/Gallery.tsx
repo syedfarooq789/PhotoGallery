@@ -18,17 +18,18 @@ const Gallery = () => {
   });
 
   useEffect(() => {
-    getPhotoList(parseInt(pageNumber!!));
+    if (pageNumber) getPhotoList(parseInt(pageNumber));
   }, [pageNumber]);
 
   async function getPhotoList(pageNumber: number) {
     try {
       const photosApiResponse = await getPhotos(pageNumber, pageLimit);
-      setAllValues({
-        photos: photosApiResponse!!.data,
-        totalCount: parseInt(photosApiResponse!!.headers["x-total-count"]),
-        currentPage: pageNumber,
-      });
+      if (photosApiResponse)
+        setAllValues({
+          photos: photosApiResponse.data,
+          totalCount: parseInt(photosApiResponse.headers["x-total-count"]),
+          currentPage: pageNumber,
+        });
     } catch (err) {
       console.log("cannnot fetch photos in gallery" + err);
     }
