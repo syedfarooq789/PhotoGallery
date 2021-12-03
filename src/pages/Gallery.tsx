@@ -9,7 +9,7 @@ import { useNavigate, useParams } from "react-router-dom";
 
 const Gallery = () => {
   const pageLimit = 10;
-  let { pageNumber } = useParams<string>();
+  const { pageNumber } = useParams<string>();
   const navigate = useNavigate();
   const [allValues, setAllValues] = useState<GalleryState>({
     photos: [],
