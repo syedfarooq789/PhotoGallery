@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { PhotoDetails } from "../interfaces/PhotoDetails";
 import Avatar from "@mui/material/Avatar";
 import { useLocation, useNavigate } from "react-router-dom";
@@ -7,20 +7,8 @@ import Typography from "@mui/material/Typography";
 
 const DetailView = () => {
   const { state } = useLocation();
-  const photoDetailsIntialValue = {
-    albumId: 0,
-    id: 0,
-    thumbnailUrl: "",
-    title: "",
-    url: "",
-  };
-  const [photoDetails, setPhotoDetails] = useState<PhotoDetails>(
-    photoDetailsIntialValue
-  );
+  const [photoDetails] = useState<PhotoDetails>(state);
   const navigate = useNavigate();
-  useEffect(() => {
-    setPhotoDetails(state);
-  }, []);
 
   function goBack() {
     navigate(-1);
