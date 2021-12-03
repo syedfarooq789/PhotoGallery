@@ -1,8 +1,7 @@
-import { PhotoDetails } from './PhotoDetails';
+import { PhotoDetails } from "./PhotoDetails";
 
 export interface GalleryState {
-    photos: PhotoDetails[],
-    totalCount: number,
-    currentPage: number
-
+  photos: PhotoDetails[];
+  totalCount: number;
+  currentPage: number;
 }
